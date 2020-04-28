@@ -1,0 +1,45 @@
+.footer {
+    margin-top: 20px;
+	background-color: #1a1a1a;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	border-bottom: 3px solid rgb(56, 189, 111);
+	bottom: 0px;
+	position: fixed; 
+	/* position: relative;  */
+	width: 100%;
+}
+
+#copyright {
+	width: 50%;
+}
+
+#copyright p {
+	color: #8C8B8A;
+	font-weight: 600;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+#copyright p a {
+	text-decoration: none;
+	color: rgb(56, 189, 111);
+}
+
+.scroll-top {
+	text-align: right;
+}
+
+.scroll-top a {
+	background-color: rgb(56, 189, 111);
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 20%;
+}
+
+.scroll-top fa-icon {
+	color: white;
+	font-size: 18px;
+}

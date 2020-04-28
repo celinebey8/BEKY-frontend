@@ -1,0 +1,17 @@
+
+.list-group-item {
+    position: relative;
+	color: #333;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.list-group-item.active {
+    background-color: rgb(56, 189, 111);
+    border-color: rgb(56, 189, 111);
+    color: white;
+}
+
+/* .list-group-item.hover {
+
+} */

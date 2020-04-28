@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navColor">
+  <a class="navbar-brand" href="#">
+    <fa-icon [icon]="faStarOfLife"></fa-icon> <span>BEKY </span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+      <li routerLinkActive="active" class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/patients">Patients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact">Contact Us</a>
+      </li>
+    </ul>
+
+    <!-- <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown" appDropdown>
+        <a href="#" class="dropdown-toggle" role="button"> Manage <span class="caret"></span> </a>
+        <ul class="dropdown-menu">
+          <li><a style="cursor: pointer;">Save Data </a></li>
+          <li><a style="cursor: pointer;">Fetch Data </a></li>
+        </ul>
+      </li>
+    </ul> -->
+
+    <button class="btn btn-light my-2 my-sm-0" type="submit">Log In</button>
+  </div>
+</nav>
