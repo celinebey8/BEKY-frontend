@@ -1,0 +1,30 @@
+<div class="center">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Heart Rate</th>
+                    <th scope="col">Condition</th>
+                    <th scope="col">Fall</th>
+                    <th scope="col">Glucose</th>
+                    <th scope="col">Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of healthData">
+                    <td>{{d.date}}</td>
+                    <td>{{d.heartrate}}</td>
+                    <td *ngIf="d.critical==0">Healthy</td>
+                    <td *ngIf="d.critical==1">Critical</td>
+                    <td *ngIf="d.fall==0">No Fall Detected</td>
+                    <td *ngIf="d.fall==1"> Fall Detected</td>
+                    <td>{{d.glucose}}</td>
+                    <td>{{d.location}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

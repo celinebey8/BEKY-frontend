@@ -1,0 +1,39 @@
+<div class="center">
+    <div class="container ">
+
+        <div class="row list">
+    
+            <div class="col-md-6">
+                <p class="vitals-title"> Date Taken</p>
+                <p class="vitals"> {{vitals.date}} </p>
+    
+                <p class="vitals-title"> Heart Rate</p>
+                <p class="vitals"> {{vitals.heartrate}} </p>
+    
+                <p class="vitals-title"> Condition </p>
+                <p class="vitals" *ngIf="vitals.critical==0"> Healthy </p>
+                <p class="vitals" *ngIf="vitals.critical==1"> Critical </p>
+
+            </div>
+            <div class="col-md-6">
+                <p class="vitals-title"> Fall </p>
+                <p class="vitals" *ngIf="vitals.fall==0"> No Fall Detected </p>
+                <p class="vitals" *ngIf="vitals.fall==1"> Fall Detected </p>
+    
+                <p class="vitals-title"> Glucose Level</p>
+                <p class="vitals"> {{vitals.glucose}} </p>
+
+                <p class="vitals-title"> Location </p>
+                <p class="vitals"> {{vitals.location}} </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+    
+            <!-- <app-graph [patientData]='healthData'> </app-graph> -->
+    
+        </div>
+    </div>
+</div>

@@ -21,10 +21,14 @@ import { PatientComponent } from './patient-list/patient/patient.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientDetailComponent } from './patient-list/patient-detail/patient-detail.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { MessagingService } from './messaging.service';
 import { AsyncPipe } from '@angular/common';
-import { GraphComponent } from './patient-list/graph/graph.component';
+import { GraphComponent } from './patient-list/patient-menu/patient-menu-components/graph/graph.component';
+import { NotesComponent } from './patient-list/patient-menu/patient-menu-components/notes/notes.component';
+import { VitalsComponent } from './patient-list/patient-menu/patient-menu-components/vitals/vitals.component';
 import { jqxChartModule } from 'jqwidgets-ng/jqxchart';
+import { PatientMenuComponent } from './patient-list/patient-menu/patient-menu.component';
+import { HistoryComponent } from './patient-list/patient-menu/patient-menu-components/history/history.component';
+
 
 
 @NgModule({
@@ -38,7 +42,11 @@ import { jqxChartModule } from 'jqwidgets-ng/jqxchart';
     PatientListComponent,
     PatientDetailComponent,
     ContactUsComponent,
-    GraphComponent
+    PatientMenuComponent,
+    GraphComponent,
+    NotesComponent,
+    VitalsComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,7 @@ import { jqxChartModule } from 'jqwidgets-ng/jqxchart';
     HttpClientModule,
     jqxChartModule
   ],
-  providers: [MessagingService,AsyncPipe],
+  providers: [AsyncPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

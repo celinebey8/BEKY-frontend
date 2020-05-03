@@ -1,17 +1,19 @@
-
-.list-group-item {
+div, a,.list-group-item {
     position: relative;
 	color: #333;
 	font-size: 20px;
-	font-weight: 500;
+    font-weight: 500;
+    background-color: whitesmoke;
 }
 
-.list-group-item.active {
+
+.patient {
+    background-color: whitesmoke;
+    
+}
+
+.patient:active, .patient:hover, div:active, div:hover, a:active , a:hover{
     background-color: rgb(56, 189, 111);
     border-color: rgb(56, 189, 111);
     color: white;
 }
-
-/* .list-group-item.hover {
-
-} */

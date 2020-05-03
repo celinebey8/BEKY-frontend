@@ -1,7 +1,7 @@
 <!-- <div class="col-md-5"> -->
-    <a [routerLink]="[index]" [state]="[patients]" routerLinkActive="active" style="cursor: pointer;"
-        class="list-group-item clearfix ">
-        <div class="pull-left">
+    <a (click)='goToPatient()'  style="cursor: pointer;" class="list-group-item clearfix patient" >
+    <!-- <a [routerLink]="['patient/'+index]" [state]="[patients]" routerLinkActive="active" style="cursor: pointer;" class="list-group-item clearfix "> -->
+        <div class="pull-left patient">
             <h4 class="list-group-item-heading patient"> {{ patient.fname }} {{ patient.lname }} </h4>
         </div>
     </a>

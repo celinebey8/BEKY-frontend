@@ -1,12 +1,12 @@
 .footer {
     margin-top: 20px;
 	background-color: #1a1a1a;
-	padding-bottom: 20px;
-	padding-top: 20px;
+	padding: 7px 0;
 	border-bottom: 3px solid rgb(56, 189, 111);
 	bottom: 0px;
-	position: fixed; 
-	/* position: relative;  */
+	/* position: fixed;  */
+	display: block;
+	position: relative; 
 	width: 100%;
 }
 
@@ -17,7 +17,7 @@
 #copyright p {
 	color: #8C8B8A;
 	font-weight: 600;
-	font-size: 15px;
+	font-size: 12px;
 	text-transform: uppercase;
 }
 
@@ -32,14 +32,11 @@
 
 .scroll-top a {
 	background-color: rgb(56, 189, 111);
-	padding-right: 15px;
-	padding-left: 15px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 	border-radius: 20%;
+	padding: 2px 8px;
 }
 
 .scroll-top fa-icon {
 	color: white;
-	font-size: 18px;
+	font-size: 12px;
 }
