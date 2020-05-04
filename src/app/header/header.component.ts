@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faStarOfLife } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from "./../shared/services/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,19 @@ import { faStarOfLife } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
-  constructor() { }
+  public loggedIn;
+  constructor(public authService: AuthService) { 
+    this.loggedIn = this.authService.isLoggedIn;
+  }
   faStarOfLife = faStarOfLife;
+
+  logged(bool: Boolean){
+    if (bool == true){
+      this.authService.SignOut();
+      this.loggedIn = false;
+    }
+    else{
+      this.loggedIn = true;
+    }
+  }
 }

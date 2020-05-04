@@ -25,11 +25,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   
  
+  { path: 'patients', component: ServicesComponent, canActivate: [AuthGuard]},
   {
-    path: 'patients', component: ServicesComponent, canActivate: [SecureInnerPagesGuard]
-  },
-  {
-    path: 'patient/:id', component: PatientMenuComponent, children: [
+    path: 'patient/:id', component: PatientMenuComponent,canActivate: [AuthGuard], children: [
       { path: 'vitals', component: VitalsComponent },
       { path: 'graph', component: GraphComponent },
       { path: 'notes', component: NotesComponent },
@@ -49,8 +47,8 @@ const routes: Routes = [
   { path: 'login', redirectTo: '/sign-in', pathMatch: 'full'},
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
-  { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] }
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard]}
 ];
 
 @NgModule({
