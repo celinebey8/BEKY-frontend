@@ -12,12 +12,21 @@ import { VitalsComponent } from './patient-list/patient-menu/patient-menu-compon
 import { NotesComponent } from './patient-list/patient-menu/patient-menu-components/notes/notes.component';
 import { HistoryComponent } from './patient-list/patient-menu/patient-menu-components/history/history.component';
 
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
+import { AuthGuard } from "./shared/guard/auth.guard";
+import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard";
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  
  
   {
-    path: 'patients', component: ServicesComponent
+    path: 'patients', component: ServicesComponent, canActivate: [SecureInnerPagesGuard]
   },
   {
     path: 'patient/:id', component: PatientMenuComponent, children: [
@@ -34,7 +43,14 @@ const routes: Routes = [
   // { path: 'graph', component: GraphComponent , outlet: 'outletmenu'},
   // { path: 'notes', component: NotesComponent, outlet: 'outletmenu' },
 
-  { path: 'contact', component: ContactUsComponent }
+  { path: 'contact', component: ContactUsComponent },
+
+  
+  { path: 'login', redirectTo: '/sign-in', pathMatch: 'full'},
+  { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] }
 ];
 
 @NgModule({
@@ -42,5 +58,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-

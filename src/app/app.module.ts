@@ -8,10 +8,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { environment } from '../environments/environment';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireAuth } from 'angularfire2/auth';
+
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
@@ -29,7 +30,14 @@ import { jqxChartModule } from 'jqwidgets-ng/jqxchart';
 import { PatientMenuComponent } from './patient-list/patient-menu/patient-menu.component';
 import { HistoryComponent } from './patient-list/patient-menu/patient-menu-components/history/history.component';
 
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
+import { AuthService } from "./shared/services/auth.service";
+import { AuthGuard } from "./shared/guard/auth.guard";
+import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard";
 
 @NgModule({
   declarations: [
@@ -46,20 +54,25 @@ import { HistoryComponent } from './patient-list/patient-menu/patient-menu-compo
     GraphComponent,
     NotesComponent,
     VitalsComponent,
-    HistoryComponent
+    HistoryComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    AngularFireModule.initializeApp(environment.firebase, 'mdp-beky'),
-    AngularFireDatabaseModule,               
+    AngularFireModule.initializeApp(environment.firebase, 'mdp-beky'),             
     AngularFireAuthModule,
+    AngularFireDatabaseModule,  
     AngularFireMessagingModule,
+    AngularFirestoreModule,
     HttpClientModule,
     jqxChartModule
   ],
-  providers: [AsyncPipe],
+  providers: [AsyncPipe, AuthService,AuthGuard, SecureInnerPagesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

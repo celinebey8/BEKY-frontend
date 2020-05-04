@@ -15,7 +15,9 @@
     "@angular/common": "~9.0.2",
     "@angular/compiler": "~9.0.2",
     "@angular/core": "~9.0.2",
+    "@angular/fire": "^5.4.2",
     "@angular/forms": "~9.0.2",
+    "@angular/http": "^7.2.16",
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
@@ -25,7 +27,7 @@
     "angular-font-awesome": "^3.1.2",
     "angularfire2": "^5.4.2",
     "bootstrap": "^4.4.1",
-    "firebase": "^7.14.1",
+    "firebase": "^7.14.2",
     "firebase-admin": "^8.10.0",
     "font-awesome": "^4.7.0",
     "jqwidgets-ng": "^9.1.4",
@@ -55,5 +57,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.",
+  "main": "karma.conf.js",
+  "author": "",
+  "license": "ISC"
 }
