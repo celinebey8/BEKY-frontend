@@ -20,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServicesComponent } from './services/services.component';
 import { PatientComponent } from './patient-list/patient/patient.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
-import { PatientDetailComponent } from './patient-list/patient-detail/patient-detail.component';
 import { AsyncPipe } from '@angular/common';
 import { GraphComponent } from './patient-list/patient-menu/patient-menu-components/graph/graph.component';
 import { NotesComponent } from './patient-list/patient-menu/patient-menu-components/notes/notes.component';
@@ -49,7 +48,6 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ServicesComponent,
     PatientComponent,
     PatientListComponent,
-    PatientDetailComponent,
     AboutUsComponent,
     PatientMenuComponent,
     GraphComponent,

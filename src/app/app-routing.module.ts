@@ -4,7 +4,6 @@ import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientComponent } from './patient-list/patient/patient.component';
-import { PatientDetailComponent } from './patient-list/patient-detail/patient-detail.component';
 import { PatientMenuComponent } from './patient-list/patient-menu/patient-menu.component';
 import { GraphComponent } from './patient-list/patient-menu/patient-menu-components/graph/graph.component';
 import { VitalsComponent } from './patient-list/patient-menu/patient-menu-components/vitals/vitals.component';
