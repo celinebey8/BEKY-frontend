@@ -5,26 +5,25 @@ import { ServicesComponent } from './services/services.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientComponent } from './patient-list/patient/patient.component';
 import { PatientDetailComponent } from './patient-list/patient-detail/patient-detail.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PatientMenuComponent } from './patient-list/patient-menu/patient-menu.component';
 import { GraphComponent } from './patient-list/patient-menu/patient-menu-components/graph/graph.component';
 import { VitalsComponent } from './patient-list/patient-menu/patient-menu-components/vitals/vitals.component';
 import { NotesComponent } from './patient-list/patient-menu/patient-menu-components/notes/notes.component';
 import { HistoryComponent } from './patient-list/patient-menu/patient-menu-components/history/history.component';
 
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { SignInComponent } from './authentication/sign-in/sign-in.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './authentication/verify-email/verify-email.component';
 
 import { AuthGuard } from "./shared/guard/auth.guard";
 import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard";
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  
- 
+  { path: 'home', component: HomeComponent }, 
   { path: 'patients', component: ServicesComponent, canActivate: [AuthGuard]},
   {
     path: 'patient/:id', component: PatientMenuComponent,canActivate: [AuthGuard], children: [
@@ -35,14 +34,8 @@ const routes: Routes = [
 
     ]
   },
-  // { path: 'patient/:id', component: PatientMenuComponent },
-
-  // { path: 'vitals', component: VitalsComponent, outlet: 'outletmenu' },
-  // { path: 'graph', component: GraphComponent , outlet: 'outletmenu'},
-  // { path: 'notes', component: NotesComponent, outlet: 'outletmenu' },
-
-  { path: 'contact', component: ContactUsComponent },
-
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'contact-us', component: ContactUsComponent },
   
   { path: 'login', redirectTo: '/sign-in', pathMatch: 'full'},
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},

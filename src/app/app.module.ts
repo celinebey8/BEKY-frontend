@@ -21,7 +21,6 @@ import { ServicesComponent } from './services/services.component';
 import { PatientComponent } from './patient-list/patient/patient.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientDetailComponent } from './patient-list/patient-detail/patient-detail.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AsyncPipe } from '@angular/common';
 import { GraphComponent } from './patient-list/patient-menu/patient-menu-components/graph/graph.component';
 import { NotesComponent } from './patient-list/patient-menu/patient-menu-components/notes/notes.component';
@@ -29,15 +28,17 @@ import { VitalsComponent } from './patient-list/patient-menu/patient-menu-compon
 import { jqxChartModule } from 'jqwidgets-ng/jqxchart';
 import { PatientMenuComponent } from './patient-list/patient-menu/patient-menu.component';
 import { HistoryComponent } from './patient-list/patient-menu/patient-menu-components/history/history.component';
+import { AboutUsComponent } from './about-us/about-us.component'
 
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { SignInComponent } from './authentication/sign-in/sign-in.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './authentication/verify-email/verify-email.component';
 
 import { AuthService } from "./shared/services/auth.service";
 import { AuthGuard } from "./shared/guard/auth.guard";
 import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard";
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard";
     PatientComponent,
     PatientListComponent,
     PatientDetailComponent,
-    ContactUsComponent,
+    AboutUsComponent,
     PatientMenuComponent,
     GraphComponent,
     NotesComponent,
@@ -58,7 +59,8 @@ import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard";
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

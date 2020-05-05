@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { APIcallsService } from '../apicalls.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -8,12 +7,9 @@ import { APIcallsService } from '../apicalls.service';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor(private myAPIservice: APIcallsService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  post() {
-    this.myAPIservice.sendDrID(0).subscribe(() => {}, (error) => console.log(error), () => console.log('data insert'));
-  }
 }

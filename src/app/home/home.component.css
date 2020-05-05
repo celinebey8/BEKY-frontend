@@ -1,113 +1,49 @@
-/* .overlay {
-    background-image: url("https://phcamedicalgroup.com/wp-content/uploads/2016/01/shutterstock_154772753-e1452152413469.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+.bg {
+    background-image: url(../../assets/images/dr.png);
+    width: 100%;
+}
+
+.slider_text {
+    margin-left: 50px;
+}
+
+.slider_area .single_slider {
+    height: 700px;
     background-size: cover;
-    width: 100%;
-    height: 1500px;
-} */
-
-.home {
-	padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-.img-responsive {
-    width: 100%;
-    margin-top: 160px;
+.slider_area .single_slider .slider_text h3 {
+    color: #1F1F1F;
+    /* font-family: "Poppins", sans-serif; */
+    font-size: 40px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
-.about-us-title {
-	padding-top: 50px;
-	padding-bottom: 50px;
+.slider_area .single_slider .slider_text h3 span {
+    font-weight: 700;
 }
 
-.about-us-title h2 {
-	position: relative;
-	text-align: center;
-	color: #333;
-	font-size: 30px;
-	font-weight: 400;
-	text-transform: uppercase;
+.slider_area .single_slider .slider_text p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #727272;
+    margin-bottom: 40px;
+    margin-top: 10px;
 }
 
-.about-us-title h2:after {
-	content: "";
-	position: absolute;
-	bottom: -20px;
-	left: 50%;
-	width: 60px;
-	height: 1px;
-	background-color: rgb(56, 189, 111);
-	margin-left: -30px;
-}
 
-.about-us-title p {
-	color: #333;
-	font-size: 18px;
-	line-height: 28px;
-	font-weight: 300;
-	text-align: center;
-	margin-top: 45px;
+.btn-light {
+    background-color: rgb(56, 189, 111);
+    color: white;
+    border-width: 2px;
 }
-
-.choose-us-title {
-	padding-bottom: 50px;
-}
-
-.choose-us-title h2 {
-	text-transform: uppercase;
-	font-weight: 800;
-	font-size: 30px;
-	line-height: 37px;
-	position: relative; 
-}
-
-.choose-us-title h2:after {
-	content: "";
-	position: absolute;
-	bottom: -12px;
-	left: 0px;
-	width: 70px;
-	height: 1px;
-	background-color: rgb(56, 189, 111);
-}
-
-.choose-us-title p {
-	margin-top: 40px;
-	font-size: 19px;
-	line-height: 24px;
-}
-
-.choose-us-item {
-	position: relative;
-	padding-bottom: 4px;
-	padding-left: 80px; 
-}
-
-.choose-us-item div {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.ico {
-	font-size: 55px;
-	color: rgb(56, 189, 111);
-	transition: all 1s;
-	-webkit-transition: all 1s;
-	-moz-transition: all 1s;
-	-o-transition: all 1s;
-}
-
-.choose-us-item h3 {
-	color: #343434;
-	text-transform: uppercase;
-	font-size: 20px;
-	font-weight: 800; 
-}
-
-.choose-us-item p {
-	color: #727272;
-	font-size: 15px;
+.btn-light:hover {
+    background-color: rgba(179, 176, 176, 0.781);
+    color: #343434;
+    font-weight: bold;
+    border-width: 2px;
 }

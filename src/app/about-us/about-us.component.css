@@ -1,0 +1,157 @@
+.choose-us-item {
+	position: relative;
+	padding-bottom: 4px;
+	padding-left: 80px; 
+}
+
+.choose-us-item div {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+.btn-light {
+	margin-left: 85px;
+    background-color: rgb(56, 189, 111);
+    color: white;
+    font-weight: bold;
+    border-width: 2px;
+}
+.btn-light:hover {
+    background-color: white;
+    color: #343434;
+    font-weight: bold;
+    border-width: 2px;
+}
+
+.ico {
+	font-size: 50px;
+	color: rgb(56, 189, 111);
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+}
+
+.choose-us-item h3 {
+	color: #343434;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 700; 
+}
+
+.choose-us-item p {
+	color: #727272;
+	font-size: 13px;
+}
+
+
+.welcome_docmed_area {
+	padding-top: 50px;
+	padding-bottom: 20px;
+  }
+
+  
+  .welcome_docmed_area .welcome_thumb {
+	position: relative;
+  }
+  
+  
+  .welcome_docmed_area .welcome_thumb .thumb_1 {
+	left: 0;
+  }
+  
+  
+  .welcome_docmed_area .welcome_thumb .thumb_1 img {
+	width: 60%;
+  }
+  
+
+  
+  .welcome_docmed_area .welcome_thumb .thumb_2 {
+	position: absolute;
+	bottom: -94px;
+	right: -37px;
+  }
+
+  
+ 
+  .welcome_docmed_area .welcome_thumb .thumb_2 img {
+	width: 89%;
+  }
+
+  
+  .welcome_docmed_area .welcome_docmed_info {
+	padding-left: 90px;
+	margin-top: -20px;
+  }
+  
+  
+  .welcome_docmed_area .welcome_docmed_info h2 {
+	margin-bottom: 40px;
+	position: relative;
+	z-index: 9;
+	color: #333;
+	font-size: 30px;
+	font-weight: 400;
+  }
+  
+
+  .welcome_docmed_area .welcome_docmed_info h2:after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 70px;
+	height: 1px;
+	background-color: rgb(56, 189, 111);
+	/* margin-left: -30px; */
+  }
+  
+  .care {
+	font-weight: 500;
+	font-size: 36px;
+	margin-bottom: 10px;
+  }
+  
+  @media (max-width: 767px) {
+
+	.care{
+	  font-size: 30px;
+	}
+  }
+  
+  @media (max-width: 767px) {
+
+	.care br {
+	  display: none;
+	}
+  }
+  
+  .welcome_docmed_area .welcome_docmed_info p {
+	font-size: 16px;
+	color: #727272;
+	line-height: 28px;
+  }
+  
+
+  .welcome_docmed_area .welcome_docmed_info ul {
+	margin-bottom: 40px;
+	margin-top: 25px;
+  }
+  
+
+  .welcome_docmed_area .welcome_docmed_info ul li {
+	color: #727272;
+	font-size: 16px;
+	line-height: 28px;
+  }
+  
+
+  .welcome_docmed_area .welcome_docmed_info ul li i {
+	margin-right: 10px;
+	color: #5DB2FF;
+	font-weight: 16px;
+  }
+  
