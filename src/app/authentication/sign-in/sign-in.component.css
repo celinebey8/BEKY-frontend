@@ -106,10 +106,12 @@ iframe {
 
 #label-email {
   margin-right: 75px;
+  margin-top: 30px;
 }
 
 #label-pass {
-  margin-right: 50px;
+  margin-top: 30px;
+  margin-right: 40px;
 }
 
 /* #or {
