@@ -1,4 +1,4 @@
-import { Injectable, NgZone , ViewChild, AfterViewInit } from '@angular/core';
+import { Injectable, NgZone, ViewChild, AfterViewInit } from '@angular/core';
 import { User } from "../services/user";
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
@@ -8,16 +8,18 @@ import { Router } from "@angular/router";
 @Injectable({
   providedIn: 'root'
 })
-  
+
 export class AuthService {
   userData: any; // Save logged in user data
- 
+
+  public email: string;
+
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
-    public router: Router,  
+    public router: Router,
     public ngZone: NgZone, // NgZone service to remove outside scope warning
-  ) {    
+  ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe(user => {
@@ -33,12 +35,20 @@ export class AuthService {
     })
   }
 
-    // Returns true when user is looged in and email is verified
-    get isLoggedIn(): boolean {
+  // Returns true when user is looged in and email is verified
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log(user);
+    return (user !== null && user.emailVerified !== false) ? true : false;
+  }
+
+  getEmail() {
+    if(this.isLoggedIn) {
       const user = JSON.parse(localStorage.getItem('user'));
-      console.log(user);
-      return (user !== null && user.emailVerified !== false) ? true : false;
+      this.email = user.email;
+      return { email: this.email};
     }
+  }
 
   // Sign in with email/password
   SignIn(email, password) {
@@ -69,27 +79,27 @@ export class AuthService {
   // Send email verfificaiton when new user sign up
   SendVerificationMail() {
     return this.afAuth.auth.currentUser.sendEmailVerification()
-    .then(() => {
-      this.router.navigate(['verify-email-address']);
-    })
+      .then(() => {
+        this.router.navigate(['verify-email-address']);
+      })
   }
 
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider());
-  }  
+  }
 
   // Auth logic to run auth providers
   AuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
-    .then((result) => {
-       this.ngZone.run(() => {
+      .then((result) => {
+        this.ngZone.run(() => {
           this.router.navigate(['patients']);
         })
-      this.SetUserData(result.user);
-    }).catch((error) => {
-      window.alert(error)
-    })
+        this.SetUserData(result.user);
+      }).catch((error) => {
+        window.alert(error)
+      })
   }
 
   /* Setting up user data when sign in with username/password, 
@@ -117,14 +127,14 @@ export class AuthService {
     })
   }
 
-   // Reset Forggot password
-   ForgotPassword(passwordResetEmail) {
+  // Reset Forggot password
+  ForgotPassword(passwordResetEmail) {
     return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
-    .then(() => {
-      window.alert('Password reset email sent, check your inbox.');
-    }).catch((error) => {
-      window.alert(error)
-    })
+      .then(() => {
+        window.alert('Password reset email sent, check your inbox.');
+      }).catch((error) => {
+        window.alert(error)
+      })
   }
 
 }

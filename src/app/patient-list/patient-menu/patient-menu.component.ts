@@ -60,14 +60,6 @@ export class PatientMenuComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       queryParams
     };
-   
-    // const arrayOfValues = ['a', 'b', 'c', 'd'];
- 
-    // queryParams.myArray = JSON.stringify(arrayOfValues);
-
-    // const navigationExtras: NavigationExtras = {
-    //   queryParams
-    // };
 
     return navigationExtras;
   }

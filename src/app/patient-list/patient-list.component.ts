@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APIcallsService } from '../apicalls.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-patient-list',
@@ -8,18 +9,22 @@ import { APIcallsService } from '../apicalls.service';
   providers: [APIcallsService]
 })
 export class PatientListComponent implements OnInit {
-  condition: boolean;
+  dr_email;
   data;
-  constructor(private myAPIservice: APIcallsService) { }
+  constructor(private myAPIservice: APIcallsService, private router: Router, private route: ActivatedRoute, ) {
 
-  ngOnInit() {
-    this.showPatientData();
   }
 
-  showPatientData() {
-    // replace 0 by the dr's id taken by the auth service
+  ngOnInit() {  
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.dr_email = user.email;
+    console.log(this.dr_email);
+    this.showPatientData(this.dr_email);
+  }
 
-    this.myAPIservice.getPatientData(0).subscribe(val => {
+  showPatientData(email) {
+    this.myAPIservice.getPatientData(email).subscribe(val => {
+      console.log(val);
       this.data = val;
     });
   }
