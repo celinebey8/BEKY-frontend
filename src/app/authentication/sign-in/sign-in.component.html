@@ -9,12 +9,12 @@
         <div class="login100-form-title" style="background-image: url(../../assets/images/medial.png);">
           <span class="login100-form-title-1"> Sign In </span>
         </div>
-        <form>
+        <form class="form">
           <div class="authBlock">
 
             <div class="wrap-input100">
 
-              <div class="formGroup">
+              <div class="formGroup ">
                 <span class="label-input100" id="label-email">Email</span>
                 <input type="text" class="formControl input100" placeholder="Enter email" #userName required>
                 <span class="focus-input100"></span>
@@ -39,15 +39,15 @@
 
 
           <div class="container-login100-form-btn">
-            <div class="formGroup">
-              <input type="button" class="btn login100-form-btn" value="Login"
-                (click)="authService.SignIn(userName.value, userPassword.value)">
+            <div class="formGroup custom-btn">
+              <button type="button" class="btn login100-form-btn custom-btn " value="Login"
+                (click)="authService.SignIn(userName.value, userPassword.value)"> Login </button>
             </div>
 
-            <p id="or"> OR </p>
+            <!-- <p id="or"> OR </p> -->
 
-            <div class="formGroup">
-              <button type="button" class="btn login100-form-btn google-btn" (click)="authService.GoogleAuth()">
+            <div class="formGroup custom-btn">
+              <button type="button" class="btn login100-form-btn custom-btn google-btn " (click)="authService.GoogleAuth()">
                 Login with Google
               </button>
             </div>

@@ -112,13 +112,13 @@ iframe {
   margin-right: 50px;
 }
 
-#or {
+/* #or {
     font-size: 18px;
     font-weight: 700;
     text-align: center;
-    /* margin-right: 110px; */
-    margin-left: 110px;
-}
+    margin-right: 110px;
+    margin-left: 80px;
+} */
 
 .google-btn {
     margin-left: 110px;
@@ -157,7 +157,7 @@ iframe {
 
 
 .wrap-login100 {
-  width: 670px;
+  width: 650px;
   height: 500px;
   background: #fff;
   border-radius: 10px;
@@ -206,12 +206,9 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(54,84,99,0.7);
+  background-color: rgba(54, 73, 99, 0.7);
 }
 
-
-/*==================================================================
-[ Form ]*/
 
 .login100-form {
   width: 100%;
@@ -226,14 +223,12 @@ iframe {
 }
 
 
-/*------------------------------------------------------------------
-[ Input ]*/
 
 .wrap-input100 {
-  width: 100%;
+  width: 620px;
   position: relative;
-  margin-right: 50px;
-  margin-left: 50px;
+  margin-right: 10px;
+  margin-left: 20px;
   margin-top: 30px;
 }
 
@@ -250,12 +245,16 @@ iframe {
 
 }
 
-/*---------------------------------------------*/
+
 .input100 {
   /* font-family: Poppins-Regular; */
   font-size: 15px;
   color: #555555;
   line-height: 1.2;
+
+  width: 377px;
+  border-width: 377px;
+  border-bottom: 1px solid #b2b2b2;
 
   /* display: block; */
   /* width: 100%; */
@@ -264,8 +263,12 @@ iframe {
 }
 
 .forgotPassword {
-  margin-left: 520px;
+  margin-left: 420px;
   margin-top: 10px;
+}
+
+.custom-btn {
+  width: 170px;
 }
 
 .focus-input100 {
@@ -298,31 +301,30 @@ iframe {
 
 
 
-/*---------------------------------------------*/
 input.input100 {
   height: 45px;
-  border-width: 335px;
-  border-bottom: 1px solid #b2b2b2;
+
 }
 
 
 .input100:focus + .focus-input100::before {
-  width: 100%;
-}
-
-.has-val.input100 + .focus-input100::before {
-  width: 100%;
+  width: 500px;
 }
 
 
-/*------------------------------------------------------------------
-[ Button ]*/
+.form {
+  margin-right: 50px;
+  margin-left: 50px;
+  /* width: 500px; */
+}
+
+
+
 .container-login100-form-btn {
   margin-top: 50px;
   margin-right: 50px;
   margin-left: 50px;
 
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -342,10 +344,9 @@ input.input100 {
   padding: 0 20px;
   min-width: 160px;
   height: 50px;
-  background-color: rgba(44, 131, 212);
+  background-color: rgba(10, 79, 175, 0.918);
   border-radius: 25px;
 
-  /* font-family: Poppins-Regular; */
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
@@ -361,8 +362,6 @@ input.input100 {
 }
 
 
-/*------------------------------------------------------------------
-[ Responsive ]*/
 
   .label-input100 {
     text-align: left;
@@ -372,3 +371,5 @@ input.input100 {
     width: 100%;
     padding: 0 5px;
   }
+
+  
