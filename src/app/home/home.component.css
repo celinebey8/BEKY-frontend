@@ -1,6 +1,11 @@
 .bg {
     background-image: url(../../assets/images/dr.png);
-    width: 100%;
+    /* width: 100%;
+    overflow: visible; */
+    width: 1349px;
+    overflow: visible;
+    margin-left: -120px;
+    /* height: 800px; */
 }
 
 .slider_text {
