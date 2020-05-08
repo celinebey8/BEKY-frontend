@@ -1,40 +1,103 @@
-.patient {
-    padding-top: 60px;
-    padding-bottom: 10px;
-    position: relative;
-	text-align: center;
-	color: #333;
-	font-size: 30px;
-	font-weight: 400;
-	text-transform: uppercase;
+.vitals-container {
+	background-color: whitesmoke;
 }
 
 .vitals-title {
-	padding-top: 60px;
-    padding-bottom: 10px;
     position: relative;
-	text-align: center;
-	color: #333;
-	font-size: 20px;
-	font-weight: 500;
-	text-transform: uppercase;
+	font-size: 14px; 
+	/* ou 12px */
+	color: grey;
 }
 
-.patient:after, .vitals-title:after {
-    content: "";
-	position: absolute;
-	bottom: -1px;
-	left: 50%;
-	width: 60px;
-	height: 1.5px;
-	background-color: rgb(56, 189, 111);
-	margin-left: -30px;
-}
-
-
-.vitals {
+.vitals-value {
 	position: relative;
 	padding-bottom: 4px;
-    font-size: 18px;
-    text-align: center;
+    font-size: 24px;
+	text-align: left;
+	font-weight: 700;
+}
+
+.vitals-unit {
+	font-size: 12px;
+	color: grey;
+	font-weight: lighter;
+}
+
+.vitals {
+	border-radius: 6px;
+	background-color: white;
+	border: none;
+	color: black;
+	padding: 10px 32px;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	transition-duration: 0.4s;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	width: 70%;
+}
+
+.left {
+	margin-left: 170px;
+}
+
+.right {
+	margin-right: 70px;
+}
+
+.top.left {
+	margin-top: 50px;
+}
+
+.bottom.left {
+	margin-bottom: 50px;
+}
+
+.top.right {
+	margin-top: 50px;
+}
+
+.bottom.right {
+	margin-bottom: 50px;
+}
+
+.vitals > p {
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+.vitals:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.icon {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+#date {
+	color: rgb(165, 97, 165);
+}
+
+#heart {
+	color: lightcoral;
+}
+
+#glucose {
+	color: rgb(50, 205, 128)
+}
+
+#blood {
+	color: rgb(243, 97, 71);
+}
+
+#condition {
+	color: lightseagreen;
+}
+
+#fall {
+	color: rgb(255, 242, 67);
 }
