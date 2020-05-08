@@ -5,15 +5,16 @@ div, a,.list-group-item {
     font-weight: 500;
     background-color: whitesmoke;
 }
-
-
 .patient {
     background-color: whitesmoke;
-    
 }
 
-.patient:active, .patient:hover, div:active, div:hover, a:active , a:hover{
+.patient:active, .patient:hover {
     background-color: rgb(56, 189, 111);
     border-color: rgb(56, 189, 111);
     color: white;
+}
+
+#center {
+    width : 60%;
 }

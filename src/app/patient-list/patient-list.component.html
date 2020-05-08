@@ -1,16 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12" style="margin-top: 60px;">
-      <!-- <ul>
-          <p> printing the patients</p>
-            <li *ngFor="let d of data ">
-                
-                <pre>{{ d.fname | json }}</pre>
-            </li>
-        </ul> -->
       <app-patient *ngFor="let d of data; let i = index" [patients]='data' [patient]='d' [index]='i'> </app-patient>
-
-
     </div>
   </div>
 </div>

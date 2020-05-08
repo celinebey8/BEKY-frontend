@@ -1,8 +1,10 @@
-<!-- <div class="col-md-5"> -->
-    <a (click)='goToPatient()'  style="cursor: pointer;" class="list-group-item clearfix patient" >
-    <!-- <a [routerLink]="['patient/'+index]" [state]="[patients]" routerLinkActive="active" style="cursor: pointer;" class="list-group-item clearfix "> -->
-        <div class="pull-left patient">
-            <h4 class="list-group-item-heading patient"> {{ patient.fname }} {{ patient.lname }} </h4>
+<div class="d-flex flex-column" id="center">
+    <a (click)='goToPatient()' style="cursor: pointer;" class="list-group-item clearfix patient">
+        <div class="pull-left patient clearfix">
+            <h4 class="list-group-item-heading patient"> {{ patient.fname }} {{ patient.lname }} <span
+                    class="float-right">
+                    <fa-icon [icon]="faPatient"></fa-icon>
+                </span> </h4>
         </div>
     </a>
-<!-- </div> -->
+</div>

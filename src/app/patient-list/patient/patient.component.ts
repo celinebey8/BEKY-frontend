@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-patient',
@@ -13,6 +14,9 @@ export class PatientComponent implements OnInit {
   @Input() patient;
   @Input() index: number;
 
+
+  faPatient = faUserPlus;
+  
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
