@@ -100,11 +100,14 @@ iframe {
 	border: none !important;
 }
 .bg-contact2 {
-  margin-top: 20px;
-  width: 100%;  
+  /* margin-top: 20px; */
+  /* width: 100%;   */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  width: 1349px;
+  overflow: visible;
+  margin-left: -120px;
 }
 
 .container-contact2 {
