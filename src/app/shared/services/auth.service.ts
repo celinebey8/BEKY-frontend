@@ -43,24 +43,43 @@ export class AuthService {
   }
 
   getEmail() {
-    if(this.isLoggedIn) {
+    if (this.isLoggedIn) {
       const user = JSON.parse(localStorage.getItem('user'));
       this.email = user.email;
-      return { email: this.email};
+      return { email: this.email };
     }
   }
 
   // Sign in with email/password
+  // SignIn(email, password) {
+  //   return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+  //     .then((result) => {
+  //       this.ngZone.run(() => {
+  //         this.router.navigate(['patients']);
+  //       });
+  //       this.SetUserData(result.user);
+  //     }).catch((error) => {
+  //       window.alert(error.message)
+  //     })
+  // }
+
+
   SignIn(email, password) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['patients']);
-        });
-        this.SetUserData(result.user);
-      }).catch((error) => {
-        window.alert(error.message)
-      })
+    this.afAuth.auth.setPersistence('session').then(_ => {
+      return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then((result) => {
+          this.ngZone.run(() => {
+            this.router.navigate(['patients']);
+          });
+          this.SetUserData(result.user);
+        }).catch((error) => {
+          window.alert(error.message)
+        })
+    }).catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
   }
 
   // Sign up with email/password
@@ -85,8 +104,19 @@ export class AuthService {
   }
 
   // Sign in with Google
+  // GoogleAuth() {
+  //   return this.AuthLogin(new auth.GoogleAuthProvider());
+  // }
+
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider());
+    this.afAuth.auth.setPersistence('session').then(_ => {
+      return this.AuthLogin(new auth.GoogleAuthProvider());
+    })
+      .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
   }
 
   // Auth logic to run auth providers

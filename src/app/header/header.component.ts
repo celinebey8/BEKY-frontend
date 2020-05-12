@@ -8,7 +8,7 @@ import { AuthService } from "./../shared/services/auth.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  public loggedIn;
+  public loggedIn = false;
   constructor(public authService: AuthService) { 
     this.loggedIn = this.authService.isLoggedIn;
   }
