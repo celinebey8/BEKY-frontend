@@ -4,47 +4,67 @@
 
         <div class="col-md-6">
             <div class="d-flex flex-column">
-                <div class="p-2 vitals left top">
-                    <p class="vitals-title"> <span class = "icon" id="date"> <fa-icon [icon]="faDate"></fa-icon> </span>Date Taken</p>
-                    <p class="vitals-value"> {{vitals.date}} <span class="vitals-unit">  </span> </p>
+                <div class="p-2 vitals left">
+                    <p class="vitals-title"> <span class="icon" id="date">
+                            <fa-icon [icon]="faDate"></fa-icon>
+                        </span>Date Taken</p>
+                    <p class="vitals-value"> {{vitals.date}} <span class="vitals-unit"> </span> </p>
                     <!-- <p class="vitals-value"> 05/05/2020 <span class="vitals-unit">  </span> </p> -->
                 </div>
                 <div class="p-2 vitals left">
-                    <p class="vitals-title"> <span class = "icon" id="heart"> <fa-icon [icon]="faHeart"></fa-icon> </span> Heart Rate</p>
-                    <p class="vitals-value"> {{vitals.heartrate}} <span> <p class="vitals-unit"> bpm </p> </span></p>
+                    <p class="vitals-title"> <span class="icon" id="heart">
+                            <fa-icon [icon]="faHeart"></fa-icon>
+                        </span> Heart Rate</p>
+                    <p class="vitals-value"> {{vitals.heartrate}} <span>
+                            <p class="vitals-unit"> bpm </p>
+                        </span></p>
                     <!-- <p class="vitals-value"> 76 <span class="vitals-unit"> bpm </span></p> -->
                 </div>
 
-                <div class="p-2 vitals left bottom">
-                    <p class="vitals-title"> <span class = "icon" id="glucose"> <fa-icon [icon]="faGlucose"></fa-icon> </span>Glucose Level</p>
+                <div class="p-2 vitals left">
+                    <p class="vitals-title"> <span class="icon" id="glucose">
+                            <fa-icon [icon]="faGlucose"></fa-icon>
+                        </span>Glucose Level</p>
                     <p class="vitals-value"> {{vitals.glucose}} <span class="vitals-unit"> mg/dL </span> </p>
                     <!-- <p class="vitals-value"> 214<span class="vitals-unit"> mg/dL </span> </p> -->
                 </div>
+
+
+                <div class="p-2 vitals left">
+                    <p class="vitals-title"> <span class="icon" id="location">
+                            <fa-icon [icon]="faLocation"></fa-icon>
+                        </span> Location </p>
+                    <p class="vitals-value"> {{vitals.location}} </p>
+                </div>
+
             </div>
         </div>
         <div class="col-md-6">
             <div class="d-flex flex-column">
-                <div class="p-2 vitals right top">
-                    <p class="vitals-title"> <span class = "icon" id="blood"> <fa-icon [icon]="faBlood"></fa-icon> </span>Blood Pressure </p>
+                <div class="p-2 vitals right">
+                    <p class="vitals-title"> <span class="icon" id="blood">
+                            <fa-icon [icon]="faBlood"></fa-icon>
+                        </span>Blood Pressure </p>
                     <p class="vitals-value"> {{vitals.bloodpressure}} <span class="vitals-unit"> mmHg </span> </p>
                     <!-- <p class="vitals-value"> 50 <span class="vitals-unit"> mmHg </span> </p> -->
                 </div>
                 <div class="p-2 vitals right">
-                    <p class="vitals-title" > <span class = "icon" id="condition"> <fa-icon [icon]="faCondition"></fa-icon> </span>Condition </p>
-                    <p class="vitals-value" *ngIf="vitals.critical==0"><span class="vitals-unit">  </span>  Healthy </p>
-                    <p class="vitals-value" *ngIf="vitals.critical==1"> <span class="vitals-unit">  </span> Critical </p>
+                    <p class="vitals-title"> <span class="icon" id="condition">
+                            <fa-icon [icon]="faCondition"></fa-icon>
+                        </span>Condition </p>
+                    <p class="vitals-value" *ngIf="vitals.critical==0"><span class="vitals-unit"> </span> Healthy </p>
+                    <p class="vitals-value" *ngIf="vitals.critical==1"> <span class="vitals-unit"> </span> Critical </p>
                 </div>
-                <div class="p-2 vitals right bottom">
-                    <p class="vitals-title"> <span class = "icon" id="fall"> <fa-icon [icon]="faFall"></fa-icon> </span> Fall </p>
-                    <p class="vitals-value" *ngIf="vitals.fall==0"> <span class="vitals-unit">  </span> No Fall Detected </p>
-                    <p class="vitals-value" *ngIf="vitals.fall==1"> <span class="vitals-unit">  </span> Fall Detected </p>
+                <div class="p-2 vitals right">
+                    <p class="vitals-title"> <span class="icon" id="fall">
+                            <fa-icon [icon]="faFall"></fa-icon>
+                        </span> Fall </p>
+                    <p class="vitals-value" *ngIf="vitals.fall==0"> <span class="vitals-unit"> </span> No Fall Detected
+                    </p>
+                    <p class="vitals-value" *ngIf="vitals.fall==1"> <span class="vitals-unit"> </span> Fall Detected
+                    </p>
                 </div>
-                <!-- <div class="d-flex flex-row">
-                    <div class="p-2 vitals">
-                        <p class="vitals-title"> Location </p>
-                        <p class="vitals-value"> {{vitals.location}} </p>
-                    </div>
-                </div> -->
+
             </div>
         </div>
     </div>
