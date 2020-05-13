@@ -12,7 +12,7 @@ import { APIcallsService } from 'src/app/apicalls.service';
 
 export class AuthService {
   userData: any; // Save logged in user data
-
+  public type: string;
   public email: string;
 
   constructor(
@@ -57,13 +57,13 @@ export class AuthService {
   //     })
   // }
 
-
   SignIn(email, password) {
     var userType;
     this.api.getUserAccess(email).subscribe(
       (data) => {
         // userType = JSON.parse(data.toString()).type;
         userType = data;
+        this.type = userType.type;
         console.log("user type",userType);
       });
     this.afAuth.auth.setPersistence('session').then(_ => {
@@ -134,6 +134,7 @@ export class AuthService {
         this.api.getUserAccess(result.user.email).subscribe(
           (data) => {
             userType = JSON.parse(JSON.stringify(data)).type;
+            this.type = userType.type;
             console.log("data", data.toString())
             console.log("user type", userType)
           });
@@ -185,6 +186,10 @@ export class AuthService {
       }).catch((error) => {
         window.alert(error)
       })
+  }
+
+  getType() {
+    return this.type;
   }
 
 }

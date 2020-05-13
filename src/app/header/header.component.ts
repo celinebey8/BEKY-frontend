@@ -9,18 +9,19 @@ import { AuthService } from "./../shared/services/auth.service";
 })
 export class HeaderComponent {
   public loggedIn = false;
-  constructor(public authService: AuthService) { 
-    this.loggedIn = this.authService.isLoggedIn;
+
+  constructor(public authService: AuthService) {
+    // this.loggedIn = this.authService.isLoggedIn;
   }
   faStarOfLife = faStarOfLife;
 
-  logged(bool: Boolean){
-    if (bool == true){
+  logged(bool: Boolean) {
+    if (bool == true) {
       this.authService.SignOut();
       this.loggedIn = false;
     }
     else{
-      this.loggedIn = true;
+    this.loggedIn = true;
     }
   }
 }

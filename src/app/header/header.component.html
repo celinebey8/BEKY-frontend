@@ -13,7 +13,10 @@
       <li routerLinkActive="active" class="nav-item active">
         <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li routerLinkActive="active" class="nav-item">
+      <li *ngIf="authService.getType()=='patient'" routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/patients">My Info</a>
+      </li>
+      <li *ngIf="authService.getType()=='doctor'"class="nav-item">
         <a class="nav-link" routerLink="/patients">Patients</a>
       </li>
       <li class="nav-item">
