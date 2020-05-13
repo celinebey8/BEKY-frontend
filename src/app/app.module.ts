@@ -38,6 +38,8 @@ import { AuthService } from "./shared/services/auth.service";
 import { AuthGuard } from "./shared/guard/auth.guard";
 import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard";
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { PatientUserInfoComponent } from './patient-user-info/patient-user-info.component';
+import { PatientDetailComponent } from './patient-list/patient-menu/patient-menu-components/patient-detail/patient-detail.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    PatientUserInfoComponent,
+    PatientDetailComponent
   ],
   imports: [
     BrowserModule,

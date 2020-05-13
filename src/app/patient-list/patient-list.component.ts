@@ -9,21 +9,19 @@ import { Router, ActivatedRoute } from '@angular/router';
   providers: [APIcallsService]
 })
 export class PatientListComponent implements OnInit {
-  dr_email;
+  // dr_email;
   data;
   constructor(private myAPIservice: APIcallsService, private router: Router, private route: ActivatedRoute, ) {
 
   }
 
   ngOnInit() {  
-    const user = JSON.parse(localStorage.getItem('user'));
-    this.dr_email = user.email;
-    console.log(this.dr_email);
-    this.showPatientData(this.dr_email);
+    this.showPatientData();
+    console.log(this.data);
   }
 
-  showPatientData(email) {
-    this.myAPIservice.getPatientData(email).subscribe(val => {
+  showPatientData() {
+    this.myAPIservice.getPatientData().subscribe(val => {
       console.log(val);
       this.data = val;
     });

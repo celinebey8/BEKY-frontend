@@ -19,28 +19,39 @@ import { AuthGuard } from "./shared/guard/auth.guard";
 import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard";
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { PatientUserInfoComponent } from './patient-user-info/patient-user-info.component';
+import { PatientDetailComponent } from './patient-list/patient-menu/patient-menu-components/patient-detail/patient-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent }, 
-  { path: 'patients', component: ServicesComponent, canActivate: [AuthGuard]},
+  { path: 'home', component: HomeComponent },
+  { path: 'patients', component: ServicesComponent, canActivate: [AuthGuard] },
   {
-    path: 'patient/:id', component: PatientMenuComponent,canActivate: [AuthGuard], children: [
+    path: 'patient/:id', component: PatientMenuComponent, canActivate: [AuthGuard], children: [
       { path: 'vitals', component: VitalsComponent },
       { path: 'graph', component: GraphComponent },
       { path: 'notes', component: NotesComponent },
-      { path: 'history', component: HistoryComponent}
+      { path: 'history', component: HistoryComponent },
+      { path: 'info', component: PatientDetailComponent }
 
+    ]
+  },
+  {
+    path: 'patient-info', component: PatientUserInfoComponent, canActivate: [AuthGuard], children: [
+      { path: 'vitals', component: VitalsComponent },
+      { path: 'graph', component: GraphComponent },
+      { path: 'history', component: HistoryComponent },
+      { path: 'info', component: PatientDetailComponent }
     ]
   },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  
-  { path: 'login', redirectTo: '/sign-in', pathMatch: 'full'},
-  { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard]}
+
+  { path: 'login', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] }
 ];
 
 @NgModule({

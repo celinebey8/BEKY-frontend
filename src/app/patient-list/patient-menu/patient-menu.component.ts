@@ -13,6 +13,7 @@ export class PatientMenuComponent implements OnInit {
   patient;
   healthData;
   latestVitals;
+  info;
 
   arrayOfValues: Array<string>;
 
@@ -43,7 +44,12 @@ export class PatientMenuComponent implements OnInit {
       console.log(this.patient);
     } else {
       this.patient = JSON.parse(myArray);
-
+      this.info = {
+        "fname": this.patient.fname,
+        "lname": this.patient.lname,
+        "gender": this.patient.gender,
+        "birthdate": this.patient.birthdate
+      }
       this.healthData = this.patient.health;
       console.log(this.healthData);
       
@@ -85,9 +91,11 @@ export class PatientMenuComponent implements OnInit {
     }
     if(item == "notes"){
       var path: string = "patient/"+this.index+"/notes";
-      this.router.navigate([path], this.navigateWithData(this.patient));
-
-      // this.router.navigate(['notes'], this.navigateWithData(this.patient));
+      this.router.navigate([path]);
+    }
+    if(item == "info"){
+      var path: string = "patient/"+this.index+"/info";
+      this.router.navigate([path], this.navigateWithData(this.info));
     }
 
   }

@@ -1,0 +1,16 @@
+<div class="row test">
+
+    <p> Please choose the information you want to display </p>
+
+    <div class="btn-group menu" role="group">
+        
+        <button (click)='goToItem("vitals")' type="button" class="btn btn-secondary">Vitals</button>
+        <button (click)='goToItem("graph")' type="button" class="btn btn-secondary">Graph</button>
+        <button (click)='goToItem("history")' type="button" class="btn btn-secondary">History</button>
+        <button (click)='goToItem("info")' type="button" class="btn btn-secondary">Detail</button>
+
+    </div>
+</div>
+<div>
+    <router-outlet> </router-outlet>
+</div>

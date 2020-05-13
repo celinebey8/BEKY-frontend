@@ -4,6 +4,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { APIcallsService } from 'src/app/apicalls.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class AuthService {
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
     public ngZone: NgZone, // NgZone service to remove outside scope warning
+    private api: APIcallsService
   ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -27,7 +29,7 @@ export class AuthService {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
-        console.log("saved: ", user.emailVerified);
+        // console.log("saved: ", user.emailVerified);
       } else {
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
@@ -38,16 +40,8 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    console.log(user);
+    // console.log(user);
     return (user !== null && user.emailVerified !== false) ? true : false;
-  }
-
-  getEmail() {
-    if (this.isLoggedIn) {
-      const user = JSON.parse(localStorage.getItem('user'));
-      this.email = user.email;
-      return { email: this.email };
-    }
   }
 
   // Sign in with email/password
@@ -65,11 +59,23 @@ export class AuthService {
 
 
   SignIn(email, password) {
+    var userType;
+    this.api.getUserAccess(email).subscribe(
+      (data) => {
+        // userType = JSON.parse(data.toString()).type;
+        userType = data;
+        console.log("user type",userType);
+      });
     this.afAuth.auth.setPersistence('session').then(_ => {
       return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then((result) => {
           this.ngZone.run(() => {
-            this.router.navigate(['patients']);
+            if (userType.type == "doctor") {
+              this.router.navigate(['patients']);
+            } else {
+              this.router.navigate(['patient-info']);
+            }
+            // this.router.navigate(['patients']);
           });
           this.SetUserData(result.user);
         }).catch((error) => {
@@ -121,10 +127,24 @@ export class AuthService {
 
   // Auth logic to run auth providers
   AuthLogin(provider) {
+
     return this.afAuth.auth.signInWithPopup(provider)
       .then((result) => {
+        var userType;
+        this.api.getUserAccess(result.user.email).subscribe(
+          (data) => {
+            userType = JSON.parse(JSON.stringify(data)).type;
+            console.log("data", data.toString())
+            console.log("user type", userType)
+          });
+          
         this.ngZone.run(() => {
-          this.router.navigate(['patients']);
+          if (userType == "doctor") {
+            this.router.navigate(['patients']);
+          } else {
+            this.router.navigate(['patient-info']);
+          }
+          // this.router.navigate(['patients']);
         })
         this.SetUserData(result.user);
       }).catch((error) => {
