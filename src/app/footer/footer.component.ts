@@ -8,7 +8,9 @@ import { faAngleUp} from '@fortawesome/free-solid-svg-icons';
 })
 export class FooterComponent {
   faAngleUp = faAngleUp ;
-
+  // faHome = faHome ;
   constructor() { }
-
+  goToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

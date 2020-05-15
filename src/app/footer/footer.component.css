@@ -30,13 +30,18 @@
 	text-align: right;
 }
 
+.scroll-top:hover {
+	cursor: pointer;
+}
+
 .scroll-top a {
 	background-color: rgb(56, 189, 111);
 	border-radius: 20%;
 	padding: 2px 8px;
+	cursor: pointer;
 }
 
 .scroll-top fa-icon {
 	color: white;
-	font-size: 12px;
+	font-size: 16px;
 }
