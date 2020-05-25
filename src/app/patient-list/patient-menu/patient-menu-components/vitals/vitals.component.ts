@@ -9,7 +9,7 @@ import { faCalendarAlt, faAmbulance, faHeartbeat, faSyringe, faUserInjured, faTi
   styleUrls: ['./vitals.component.css']
 })
 export class VitalsComponent implements OnInit {
-
+  new_date;
   vitals;
 
   faDate = faCalendarAlt;
@@ -23,17 +23,8 @@ export class VitalsComponent implements OnInit {
   constructor(private router: Router ,private route: ActivatedRoute,  private location: Location) { }
 
   ngOnInit(): void {
-    // this.route.params.subscribe(
-    //   (params: Params) => {
-    //     this.vitals = this.location.getState()["0"];
-    //     console.log(this.location.getState());
-    //   }
-    // );
-    // console.log(this.vitals);
-    // var nav = this.router.getCurrentNavigation();
-    // console.log(nav.extras);
-    
-    // console.log(this.location.getState());
+
+      
 
     const myArray = this.route.snapshot.queryParamMap.get('myArray');
 
@@ -42,7 +33,10 @@ export class VitalsComponent implements OnInit {
       console.log(this.vitals);
     } else {
       this.vitals = JSON.parse(myArray);
+      this.new_date = this.vitals.date.substring(0,19);
       console.log(this.vitals);
+      console.log(this.new_date);
+
     }
 
   }
