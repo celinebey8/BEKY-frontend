@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { faCalendarAlt, faAmbulance, faHeartbeat, faSyringe, faUserInjured, faTint, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faAmbulance, faHeartbeat, faSyringe, faUserInjured, faTint, faMapMarkedAlt, faTemperatureHigh } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-vitals',
@@ -19,6 +19,7 @@ export class VitalsComponent implements OnInit {
   faFall = faUserInjured;
   faBlood = faTint;
   faLocation = faMapMarkedAlt;
+  faTemperature = faTemperatureHigh;
 
   constructor(private router: Router ,private route: ActivatedRoute,  private location: Location) { }
 

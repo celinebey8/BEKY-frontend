@@ -91,7 +91,7 @@
 }
 
 #blood {
-	color: rgb(243, 97, 71);
+	color: rgb(241, 78, 50);
 }
 
 #condition {
@@ -104,4 +104,8 @@
 
 #location {
 	color: rgb(38, 174, 219);
+}
+
+#temperature {
+	color: rgb(240, 168, 75);
 }
