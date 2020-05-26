@@ -1,8 +1,17 @@
-<body>
+<!-- <body>
     <div class="center">
         <jqxChart #myChart [height]="500" [title]="'HealthCare System'" [description]="'Patient x Data'"
             [showLegend]="true" [enableAnimations]="false" [padding]="padding" [titlePadding]="titlePadding"
             [source]="sampleData" [xAxis]="xAxis" [valueAxis]="valueAxis" [seriesGroups]="seriesGroups"
+            [colorScheme]="'scheme05'">
+        </jqxChart>
+    </div>
+</body> -->
+<body>
+    <div class="center">
+        <jqxChart #myChart [height]="500" [title]="'HealthCare System'" [description]="'Patient x Data'"
+            [showLegend]="true" [enableAnimations]="false" [padding]="padding" [titlePadding]="titlePadding"
+            [source]="reducedPatientData" [xAxis]="xAxis" [valueAxis]="valueAxis" [seriesGroups]="seriesGroups"
             [colorScheme]="'scheme05'">
         </jqxChart>
     </div>

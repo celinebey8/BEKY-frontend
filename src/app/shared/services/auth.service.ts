@@ -44,22 +44,9 @@ export class AuthService {
     return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
-  // Sign in with email/password
-  // SignIn(email, password) {
-  //   return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-  //     .then((result) => {
-  //       this.ngZone.run(() => {
-  //         this.router.navigate(['patients']);
-  //       });
-  //       this.SetUserData(result.user);
-  //     }).catch((error) => {
-  //       window.alert(error.message)
-  //     })
-  // }
-
-  SignIn(email, password) {
+    SignIn(email, password) {
     var userType;
-    this.api.getUserAccess(email).subscribe(
+     this.api.getUserAccess(email).subscribe(
       (data) => {
         // userType = JSON.parse(data.toString()).type;
         userType = data;
@@ -69,13 +56,12 @@ export class AuthService {
     this.afAuth.auth.setPersistence('session').then(_ => {
       return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then((result) => {
-          this.ngZone.run(() => {
-            if (userType.type == "doctor") {
+          this.ngZone.run(async () => {
+            if (await userType.type == "doctor") {
               this.router.navigate(['patients']);
             } else {
               this.router.navigate(['patient-info']);
             }
-            // this.router.navigate(['patients']);
           });
           this.SetUserData(result.user);
         }).catch((error) => {
@@ -109,11 +95,6 @@ export class AuthService {
       })
   }
 
-  // Sign in with Google
-  // GoogleAuth() {
-  //   return this.AuthLogin(new auth.GoogleAuthProvider());
-  // }
-
   GoogleAuth() {
     this.afAuth.auth.setPersistence('session').then(_ => {
       return this.AuthLogin(new auth.GoogleAuthProvider());
@@ -139,8 +120,8 @@ export class AuthService {
             console.log("user type", userType)
           });
           
-        this.ngZone.run(() => {
-          if (userType == "doctor") {
+        this.ngZone.run(async () => {
+          if (await userType == "doctor") {
             this.router.navigate(['patients']);
           } else {
             this.router.navigate(['patient-info']);
